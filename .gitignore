@@ -1,0 +1,8 @@
+# Environment Variables
+.env
+backend/.env
+
+# Python Virtual Environments and Caches
+backend/dsa_env/
+__pycache__/
+*.pyc

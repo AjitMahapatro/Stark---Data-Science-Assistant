@@ -1,0 +1,12 @@
+
+# Backend
+cd "c:\Users\amitm\Downloads\Data Science Assistant\backend"
+.\dsa_env\Scripts\activate
+python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+# Frontend (new terminal)
+cd "c:\Users\amitm\Downloads\Data Science Assistant\frontend"
+python -m http.server 3000
+Open: http://localhost:3000
+
+Backend health: http://localhost:8000/api/health

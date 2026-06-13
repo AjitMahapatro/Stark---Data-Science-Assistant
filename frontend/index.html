@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stark Data Science Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Manrope:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+  <div class="bg-core"></div>
+  <div class="bg-rings"></div>
+
+  <main class="app-shell">
+    <header class="hero panel">
+      <div>
+        <p class="kicker">Neural Command Center</p>
+        <h1>Stark Data Science Assistant</h1>
+        <p class="sub">FastAPI + Groq + BI-grade visual analytics + voice + scraping intelligence.</p>
+      </div>
+      <div class="hero-badges">
+        <span class="badge">Realtime Charts</span>
+        <span class="badge">Voice Control</span>
+        <span class="badge">NLP Commands</span>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>1. Dataset Ingestion</h2>
+      <div class="upload-row">
+        <input id="csvFile" type="file" accept=".csv" />
+        <button id="uploadBtn">Upload CSV</button>
+      </div>
+      <p id="uploadStatus" class="status"></p>
+      <div id="datasetMeta" class="meta-grid"></div>
+      <div id="previewTableWrap" class="table-wrap"></div>
+    </section>
+
+    <section class="panel">
+      <h2>1B. Dataset Profiler</h2>
+      <div id="profileTopMetrics" class="meta-grid"></div>
+      <div id="profileTableWrap" class="table-wrap"></div>
+    </section>
+
+    <section class="panel">
+      <h2>2. BI Visual Lab</h2>
+      <div class="module-row">
+        <button class="module-btn" data-chart-preset="line">Trend</button>
+        <button class="module-btn" data-chart-preset="histogram">Distribution</button>
+        <button class="module-btn" data-chart-preset="scatter">Relationship</button>
+        <button class="module-btn" data-chart-preset="pie">Composition</button>
+        <button class="module-btn" data-chart-preset="heatmap_corr">Advanced</button>
+      </div>
+      <div class="controls-grid">
+        <label>Chart Type
+          <select id="chartType">
+            <option value="line">Line</option>
+            <option value="area">Area</option>
+            <option value="spline">Spline</option>
+            <option value="bar">Bar</option>
+            <option value="stacked_bar">Stacked Bar</option>
+            <option value="scatter">Scatter</option>
+            <option value="bubble">Bubble</option>
+            <option value="histogram">Histogram</option>
+            <option value="box">Box Plot</option>
+            <option value="violin">Violin Plot</option>
+            <option value="density">Density Contour</option>
+            <option value="heatmap_corr">Correlation Heatmap</option>
+            <option value="pie">Pie</option>
+            <option value="donut">Donut</option>
+            <option value="treemap">Treemap</option>
+          </select>
+        </label>
+        <label>X Axis
+          <select id="xAxis"></select>
+        </label>
+        <label>Y Axis
+          <select id="yAxis"></select>
+        </label>
+        <label>Size Axis (bubble)
+          <select id="sizeBy"></select>
+        </label>
+        <label>Color Group (optional)
+          <select id="colorBy"></select>
+        </label>
+      </div>
+      <div class="action-row">
+        <button id="renderChartBtn">Render Chart</button>
+      </div>
+      <div class="nlp-row">
+        <textarea id="chartNlp" rows="2" placeholder="NLP command example: show a line chart of Close by Date"></textarea>
+        <button id="nlpChartBtn">Apply NLP Command</button>
+      </div>
+      <div id="chartHint" class="status"></div>
+      <div id="chartContainer" class="chart-box"></div>
+    </section>
+
+    <section class="panel split-2">
+      <div>
+        <h2>3. AI Analysis</h2>
+        <textarea id="analysisPrompt" rows="5" placeholder="Analyze target_1d and rank the top 5 robust features using time-split logic."></textarea>
+        <div class="action-row">
+          <button id="analysisVoiceBtn" class="secondary">Voice Input</button>
+          <button id="analyzeBtn">Run Analysis</button>
+          <button id="analysisSpeakBtn" class="secondary">Speak Output</button>
+        </div>
+        <div id="analysisOutput" class="output"></div>
+      </div>
+      <div>
+        <h2>4. Strategy Chat</h2>
+        <textarea id="chatPrompt" rows="5" placeholder="Ask MLOps, model selection, deployment, or EDA strategy questions..."></textarea>
+        <div class="action-row">
+          <button id="chatVoiceBtn" class="secondary">Voice Input</button>
+          <button id="chatBtn">Send Message</button>
+          <button id="chatSpeakBtn" class="secondary">Speak Output</button>
+        </div>
+        <div id="chatOutput" class="output"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>5. Web Intelligence Scraper</h2>
+      <div class="controls-grid scrape-grid">
+        <label>URL
+          <input id="scrapeUrl" type="url" placeholder="https://example.com/article" />
+        </label>
+        <label>Instruction
+          <input id="scrapeInstruction" type="text" placeholder="Extract market signals and summarize risks." />
+        </label>
+      </div>
+      <div class="action-row">
+        <button id="scrapeBtn">Scrape + Summarize</button>
+      </div>
+      <div id="scrapeOutput" class="output"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

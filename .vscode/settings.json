@@ -1,0 +1,18 @@
+﻿{
+  "python.defaultInterpreterPath": "${workspaceFolder}\\backend\\dsa_env\\Scripts\\python.exe",
+  "python.terminal.activateEnvironment": true,
+  "python.venvPath": "${workspaceFolder}\\backend",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell (dsa_env)": {
+      "source": "PowerShell",
+      "args": [
+        "-NoExit",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "& '${workspaceFolder}\\backend\\dsa_env\\Scripts\\Activate.ps1'"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell (dsa_env)"
+}
