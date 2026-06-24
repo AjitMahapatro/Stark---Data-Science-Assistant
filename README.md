@@ -1,4 +1,4 @@
-﻿﻿# Stark Data Science Assistant
+﻿# Stark Data Science Assistant
 
 A production-style, decoupled AI data science copilot engine. This project combines a high-performance asynchronous Python backend with a lightweight, zero-dependency vanilla JavaScript frontend, providing a powerful tool for interactive data analysis and visualization.
 
